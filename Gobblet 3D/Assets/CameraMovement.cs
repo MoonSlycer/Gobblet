@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
-public class Camera : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
 
     public Transform target;
