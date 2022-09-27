@@ -7,12 +7,13 @@ public class Positions : MonoBehaviour
     public List<Vector2> piecePositions = new List<Vector2>();
     public GameObject[] pieces;
 
-    void Start()
+    void Update()
     {
         UpdatePiecePositions();
     }
     void UpdatePiecePositions()
     {
+        piecePositions.Clear();
         pieces = GameObject.FindGameObjectsWithTag("Piece");
         for (int i = 0; i < pieces.Length; i++)
         {
