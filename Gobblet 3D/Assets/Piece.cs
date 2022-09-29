@@ -15,11 +15,14 @@ public class Piece : MonoBehaviour
 
     public Material blackMat;
     public Material whiteMat;
+    void Start()
+    {
+        SetTeam();
+    }
     void Update()
     {
         SetXPos();
         SetYPos();
-        SetTeam();
         SetIsGobbled();
         SetSize();
         totalPos = new Vector2(xPos, yPos);
