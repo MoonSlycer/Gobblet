@@ -21,6 +21,7 @@ public class PieceMovement : MonoBehaviour
                 if(Input.GetMouseButtonDown(0))
                 {
                     isSelected = true;
+                    PossiblePaths.movablePiece = this.gameObject;
                 }
                 GetComponent<MeshRenderer>().material = selectedMat;
             }
