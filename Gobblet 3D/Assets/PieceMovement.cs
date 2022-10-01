@@ -31,10 +31,6 @@ public class PieceMovement : MonoBehaviour
                 {
                     Unselected();
                 }
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isSelected = false;
-                }
             }
         }
         else
@@ -49,7 +45,7 @@ public class PieceMovement : MonoBehaviour
             }
         }
     }
-    void Unselected()
+    public void Unselected()
     {
         if (pieceScript.team == "White")
         {

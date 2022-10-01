@@ -8,7 +8,12 @@ public class PossiblePaths : MonoBehaviour
     RaycastHit hit;
     public Camera mainCamera;
     public static GameObject movablePiece;
+    public string name;
 
+    public void Start()
+    {
+        name = this.gameObject.name;
+    }
     public void Update()
     {
         if (movablePiece != null)
@@ -18,21 +23,37 @@ public class PossiblePaths : MonoBehaviour
                 Pathselector();
             }
         }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
     }
     public void Pathselector()
     {
-            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+        ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.gameObject == this.gameObject)
             {
-                if (hit.transform.gameObject == this.gameObject)
+                GetComponent<MeshRenderer>().enabled = true;
+                if(Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<MeshRenderer>().enabled = true;
-                }
-                if (hit.transform.gameObject != this.gameObject)
-                {
+                    movablePiece.GetComponent<Piece>().xPos = int.Parse(name.Substring(0, 1));
+                    movablePiece.GetComponent<Piece>().yPos = int.Parse(name.Substring(2, 1));
+                    movablePiece.GetComponent<PieceMovement>().isSelected = false;
                     GetComponent<MeshRenderer>().enabled = false;
                 }
             }
+            if (hit.transform.gameObject != this.gameObject)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
     }
+
 
 }
