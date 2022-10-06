@@ -12,6 +12,8 @@ public class PossiblePaths : MonoBehaviour
     public static GameObject movablePiece;
     public string name;
     public bool isPiece;
+    public bool isSmall;
+    public int piece;
     public void Start()
     {
         name = this.gameObject.name;
@@ -23,6 +25,7 @@ public class PossiblePaths : MonoBehaviour
             if (movablePiece.GetComponent<PieceMovement>().isSelected == true)
             {
                 Pathselector();
+                CheckForPiece(int.Parse(name.Substring(0, 1)), int.Parse(name.Substring(2, 1)));
             }
         }
         else
@@ -37,7 +40,6 @@ public class PossiblePaths : MonoBehaviour
         {
             if (hit.transform.gameObject == this.gameObject)
             {
-                CheckForPiece(int.Parse(name.Substring(0, 1)), int.Parse(name.Substring(2, 1)));
                 if (isPiece == false)
                 {
                     GetComponent<MeshRenderer>().enabled = true;
@@ -62,7 +64,7 @@ public class PossiblePaths : MonoBehaviour
     }
     public void CheckForPiece(int x, int y)
     {
-        int piece = 0;
+        piece = 0;
         foreach (Vector2 i in positionsScript.piecePositions)
         {
             if (x == i.x && y == i.y)

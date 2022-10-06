@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d3f3837cf3e9a43c4af0ffc5c2be90b3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.079759724, g: 0.0576678, b: 0.18963334, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,6 +283,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &145811066
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +399,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &308972082
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +515,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &501624115
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +631,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &530163462
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +747,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &645581819
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +863,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,8 +1067,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4689197660783997539, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
       propertyPath: m_Name
-      value: King (1)
+      value: Gobblet
       objectReference: {fileID: 0}
+    - target: {fileID: 4689197660783997544, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
+      propertyPath: size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689197660783997544, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
+      propertyPath: positionsScript
+      value: 
+      objectReference: {fileID: 1789883244}
     - target: {fileID: 4689197660783997546, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
       propertyPath: mainCamera
       value: 
@@ -1214,6 +1240,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &867864179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1356,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1001 &885884373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,7 +1368,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4689197660783997539, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
       propertyPath: m_Name
-      value: King (2)
+      value: Gobblet (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4689197660783997544, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
       propertyPath: team
@@ -1346,6 +1378,10 @@ PrefabInstance:
       propertyPath: xPos
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4689197660783997544, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
+      propertyPath: positionsScript
+      value: 
+      objectReference: {fileID: 1789883244}
     - target: {fileID: 4689197660783997546, guid: ec6a12a5c221245dab426d7857f598ad, type: 3}
       propertyPath: mainCamera
       value: 
@@ -1441,7 +1477,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0}
+  m_BackGroundColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1462,7 +1498,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1622,6 +1658,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1175806404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1774,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1499761922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1890,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1631234856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +2006,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1642153230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2122,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1662125603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2238,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1789883243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePositions: []
   pieces: []
+  wPieces: 0
+  bPieces: 0
 --- !u!4 &1789883245
 Transform:
   m_ObjectHideFlags: 0
@@ -2346,6 +2402,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1882362756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,6 +2518,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   positionsScript: {fileID: 1789883244}
   name: 
+  isPiece: 0
+  isSmall: 0
+  piece: 0
 --- !u!1 &1924182403
 GameObject:
   m_ObjectHideFlags: 0
