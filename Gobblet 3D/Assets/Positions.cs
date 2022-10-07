@@ -53,6 +53,11 @@ public class Positions : MonoBehaviour
         List<Vector2> winningBYpos2 = new List<Vector2>();
         List<Vector2> winningBYpos3 = new List<Vector2>();
         List<Vector2> winningBYpos4 = new List<Vector2>();
+
+        List<Vector2> winningWdiag1 = new List<Vector2>();
+        List<Vector2> winningBdiag1 = new List<Vector2>();
+        List<Vector2> winningWdiag2 = new List<Vector2>();
+        List<Vector2> winningBdiag2 = new List<Vector2>();
         foreach (Vector2 i in piecePositions)
         {
             if (pieces[piece].GetComponent<Piece>().team == "White" && pieces[piece].GetComponent<Piece>().isExterior == true)
@@ -89,6 +94,40 @@ public class Positions : MonoBehaviour
                 {
                     winningWYpos4.Add(i);
                 }
+
+                if (i.x == 1 && i.y == 1)
+                {
+                    winningWdiag1.Add(i);
+                }
+                if (i.x == 2 && i.y == 2)
+                {
+                    winningWdiag1.Add(i);
+                }
+                if (i.x == 3 && i.y == 3)
+                {
+                    winningWdiag1.Add(i);
+                }
+                if (i.x == 4 && i.y == 4)
+                {
+                    winningWdiag1.Add(i);
+                }
+
+                if (i.x == 4 && i.y == 1)
+                {
+                    winningWdiag2.Add(i);
+                }
+                if (i.x == 3 && i.y == 2)
+                {
+                    winningWdiag2.Add(i);
+                }
+                if (i.x == 2 && i.y == 3)
+                {
+                    winningWdiag2.Add(i);
+                }
+                if (i.x == 1 && i.y == 4)
+                {
+                    winningWdiag2.Add(i);
+                }
             }
             if (pieces[piece].GetComponent<Piece>().team == "Black" && pieces[piece].GetComponent<Piece>().isExterior == true)
             {
@@ -124,14 +163,49 @@ public class Positions : MonoBehaviour
                 {
                     winningBYpos4.Add(i);
                 }
+
+
+                if (i.x == 1 && i.y == 1)
+                {
+                    winningBdiag1.Add(i);
+                }
+                if (i.x == 2 && i.y == 2)
+                {
+                    winningBdiag1.Add(i);
+                }
+                if (i.x == 3 && i.y == 3)
+                {
+                    winningBdiag1.Add(i);
+                }
+                if (i.x == 4 && i.y == 4)
+                {
+                    winningBdiag1.Add(i);
+                }
+
+                if (i.x == 4 && i.y == 1)
+                {
+                    winningBdiag2.Add(i);
+                }
+                if (i.x == 3 && i.y == 2)
+                {
+                    winningBdiag2.Add(i);
+                }
+                if (i.x == 2 && i.y == 3)
+                {
+                    winningBdiag2.Add(i);
+                }
+                if (i.x == 1 && i.y == 4)
+                {
+                    winningBdiag2.Add(i);
+                }
             }
             piece++;
         }
-        if(winningWXpos1.Count == 4 || winningWXpos2.Count == 4 || winningWXpos3.Count == 4 || winningWXpos4.Count == 4 || winningWYpos1.Count == 4 || winningWYpos2.Count == 4 || winningWYpos3.Count == 4 || winningWYpos4.Count == 4)
+        if(winningWXpos1.Count == 4 || winningWXpos2.Count == 4 || winningWXpos3.Count == 4 || winningWXpos4.Count == 4 || winningWYpos1.Count == 4 || winningWYpos2.Count == 4 || winningWYpos3.Count == 4 || winningWYpos4.Count == 4 || winningWdiag1.Count == 4 || winningWdiag2.Count == 4)
         {
             return "White";
         }
-        if (winningBXpos1.Count == 4 || winningBXpos2.Count == 4 || winningBXpos3.Count == 4 || winningBXpos4.Count == 4 || winningBYpos1.Count == 4 || winningBYpos2.Count == 4 || winningBYpos3.Count == 4 || winningBYpos4.Count == 4)
+        if (winningBXpos1.Count == 4 || winningBXpos2.Count == 4 || winningBXpos3.Count == 4 || winningBXpos4.Count == 4 || winningBYpos1.Count == 4 || winningBYpos2.Count == 4 || winningBYpos3.Count == 4 || winningBYpos4.Count == 4 || winningBdiag1.Count == 4 || winningBdiag2.Count == 4)
         {
             return "Black";
         }
