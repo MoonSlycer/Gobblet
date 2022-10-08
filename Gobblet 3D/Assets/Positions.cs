@@ -13,13 +13,9 @@ public class Positions : MonoBehaviour
     {
         UpdatePiecePositions();
         CheckForWin();
-        if(CheckForWin() == "White")
+        if (CheckForWin() == "Black" || CheckForWin() == "White")
         {
-            Debug.Log("White wins!");
-        }
-        if(CheckForWin() == "Black")
-        {
-            Debug.Log("Black wins!");
+            takingTurns.turn = "Null";
         }
     }
     void UpdatePiecePositions()

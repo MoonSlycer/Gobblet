@@ -45,6 +45,14 @@ public class PossiblePaths : MonoBehaviour
                     GetComponent<MeshRenderer>().enabled = true;
                     if (Input.GetMouseButtonDown(0))
                     {
+                        if (movablePiece.GetComponent<Piece>().team == "White")
+                        {
+                            takingTurns.turn = "Black";
+                        }
+                        if (movablePiece.GetComponent<Piece>().team == "Black")
+                        {
+                            takingTurns.turn = "White";
+                        }
                         movablePiece.GetComponent<Piece>().xPos = int.Parse(name.Substring(0, 1));
                         movablePiece.GetComponent<Piece>().yPos = int.Parse(name.Substring(2, 1));
                         movablePiece.GetComponent<PieceMovement>().isSelected = false;

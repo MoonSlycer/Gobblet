@@ -16,7 +16,7 @@ public class PieceMovement : MonoBehaviour
         ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
         {
-            if(hit.transform.gameObject == this.gameObject)
+            if(hit.transform.gameObject == this.gameObject && pieceScript.team == takingTurns.turn)
             {
                 if(Input.GetMouseButtonDown(0))
                 {
